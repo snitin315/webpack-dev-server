@@ -103,7 +103,7 @@ describe('findPort', () => {
   it('should retry finding the port when serial ports are busy', () => {
     const busyPorts = [8080, 8081, 8082, 8083];
 
-    process.env.DEFAULT_PORT_RETRY = 3;
+    process.env.DEFAULT_PORT_RETRY = 4;
 
     return createDummyServers(busyPorts)
       .then(() => findPort())
