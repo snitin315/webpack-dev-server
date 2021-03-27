@@ -101,14 +101,14 @@ describe('findPort', () => {
   });
 
   it('should retry finding the port when serial ports are busy', () => {
-    const busyPorts = [8080, 8081, 8082, 8083];
+    const busyPorts = [9000, 9001, 9002, 9003];
 
     process.env.DEFAULT_PORT_RETRY = 3;
 
     return createDummyServers(busyPorts)
       .then(() => findPort())
       .then((port) => {
-        expect(port).toEqual(8080 + busyPorts.length + 1);
+        expect(port).toEqual(9000 + busyPorts.length);
       });
   });
 
