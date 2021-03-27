@@ -100,8 +100,7 @@ describe('findPort', () => {
       });
   });
 
-  // TODO: fix me, Flaky on CI
-  it.skip('should retry finding the port when serial ports are busy', () => {
+  it('should retry finding the port when serial ports are busy', () => {
     const busyPorts = [8080, 8081, 8082, 8083];
 
     process.env.DEFAULT_PORT_RETRY = 3;
